@@ -106,10 +106,9 @@ localStorage.setItem("input",JSON.stringify({...formInput}))
   if(signObj.name===formInput.name && signObj.email===formInput.email && signObj.password===formInput.password && formValidate(formInput)){
   navigate("/login")
   }
-  // else{
-  //  return <p><img src={cart_cross_icon} className="cross-style" alt="jaoge tum kabhi" />The password
-  //  or email you entered are incorrect. Please try again</p>
-  // }
+  else{
+    alert("password or username not valid")
+  }
   }
 
   

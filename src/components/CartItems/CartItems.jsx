@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import { useContext } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { addToCart,removeToCart} from '../../Slice/shopSlice'
+import { addToCart,removeFromCart} from '../../Slice/shopSlice'
 import './CartItems.css'
 import Trash_font_awesome from '../../assets/Trash_font_awesome.svg.png'
+import Button from '../Button'
 const CartItems = () => {
 const dispatch=useDispatch()
 const cartInit=useSelector((state)=>state.dukan.cartInit)
@@ -37,11 +38,128 @@ return discount
 <img src={e.image} alt="" className='carticon-product-icon'/>
 <p>{e.name}</p>
 <p>${e.new_price}</p>
-<button className="cartitems-quantity">{e.count}</button>
+{/* <button className="cartitems-quantity">{e.count}</button> */}
+<Button {...e}/>
 <p>${e.count*e.new_price}</p>
-<img className='cartitems-remove-icon' src={Trash_font_awesome} width='40px' height='20px' onClick={()=>{dispatch(removeToCart(e.id))}}/>
+<img className='cartitems-remove-icon' src={Trash_font_awesome} width='40px' height='20px' onClick={()=>{dispatch(removeFromCart(e.id))}}/>
 </div>
 <hr/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </li>
   )
   }

@@ -99,3 +99,9 @@ color:azure;
     width:100px;
 }
 
+.text-custom{
+height:10px;
+width:50px;
+cursor:pointer;
+border-radius:30px;
+}

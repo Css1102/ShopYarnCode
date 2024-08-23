@@ -6,6 +6,7 @@ cartInit:[],
 cartAmount:0,
 islogged:false,
 all_product,
+initchar:"",
 }
 
 export const shopSlice=createSlice({
@@ -24,13 +25,13 @@ if(item_cart===undefined){
 state.cartInit.push(item)
 state.cartAmount+=item.new_price*item.count
 }
-else{
-// state.cartInit=[...state.cartInit,{...item_cart,count:item_cart.count+1}]
-const index=state.cartInit.findIndex((inditer)=>inditer.id===item_cart.id)
-state.cartInit[index].count+=1;
-state.cartAmount+=item_cart.new_price
+// else{
+// // state.cartInit=[...state.cartInit,{...item_cart,count:item_cart.count+1}]
+// const index=state.cartInit.findIndex((inditer)=>inditer.id===item_cart.id)
+// state.cartInit[index].count+=1;
+// state.cartAmount+=item_cart.new_price
 
-}
+// }
 }
 },
 removeToCart:(state,action)=>{
@@ -50,10 +51,24 @@ else if(item_remove!==undefined && item_remove.count>1){
 }
 },
 toggleLogged:(state,action)=>{
+state.initchar+=action.payload;
 state.islogged=!state.islogged
+},
+incrementCart:(state,action)=>{
+const item=state.cartInit.find((it)=>it.id===action.payload)
+const itemInd=state.cartInit.findIndex((it)=>it.id===action.payload)
+state.cartInit[itemInd].count+=1;
+state.cartAmount+=item.new_price
+},
+removeFromCart:(state,action)=>{
+console.log("reducer called")
+const remInd=state.cartInit.find((it)=>it.id===action.payload)
+// const newArr=state.cartInit.slice(remInd,remInd+1);
+state.cartInit=state.cartInit.filter((it)=>it.id!==remInd.id)
+console.log(state.cartInit)
 }
 }
 })
 
 export default shopSlice.reducer
-export const {addToCart,removeToCart,toggleLogged}=shopSlice.actions
+export const {addToCart,removeToCart,toggleLogged,incrementCart,removeFromCart}=shopSlice.actions

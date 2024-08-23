@@ -26,7 +26,7 @@ color:#090909;
 font-size:40px;
 font-weight:500;
 position:relative;
-right:75px;
+right:100px;
 }
 
 .hero-left p{
@@ -59,6 +59,7 @@ background:palevioletred;
 color:white;
 font-size:22px;
 font-weight:500;
+overflow-y:auto;
 }
 
 .hero-latest-btn button:hover{

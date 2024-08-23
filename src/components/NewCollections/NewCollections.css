@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Playwrite+HR:wght@100..400&display=swap');
+
 .new-collections{
     flex:1;
     display:flex;
@@ -10,6 +12,7 @@
     .new-collections h1{
     color:#171717;
     font-size:50px;
+    font-family:'League Gothic',sans-serif;
     font-weight:600;
     }
     

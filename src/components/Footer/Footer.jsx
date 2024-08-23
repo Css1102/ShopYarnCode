@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-import footer_logo from '../../assets/logo_big.png'
+import footer_logo from '../../assets/logo-no-background.png'
 import instagram_icon from '../../assets/instagram_icon.png'
 import pintester_icon from '../../assets/pintester_icon.png'
 import whatsapp_icon from '../../assets/whatsapp_icon.png'
@@ -8,8 +8,8 @@ function Footer() {
   return (
   <div className="footer">
     <div className="footer-logo">
-        <img src={footer_logo} alt="" />
-        <p>SHOPPER</p>
+        <img src={footer_logo} height='80px' width='120px' alt="" />
+       
     </div>
     <ul className="footer-links">
     <li>Company</li>

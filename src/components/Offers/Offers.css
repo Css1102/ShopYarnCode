@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Playwrite+HR:wght@100..400&display=swap');
+
 .Offers{
 width:65%;
 height:60vh;
@@ -17,7 +19,7 @@ justify-content:center;
 
 .Offers-left h1{
 color:#171717;
-font-size:40px;
+font-size:48px;
 font-weight:600;
 padding-bottom:30px;
 position:relative;
@@ -25,16 +27,18 @@ bottom:200px;
 display:inline-block;
 white-space:nowrap;
 left:50px;
+font-family: 'League Gothic',sans-serif;
 }
 
 .Offers-left p{
 color:#171717;
-font-size:22px;
+font-size:30px;
 font-weight:600;
 position:relative;
 bottom:200px;
 left:50px;
 display:inline-block;
+font-family: 'League Gothic',sans-serif;
 }
 
 .Offers-left button{

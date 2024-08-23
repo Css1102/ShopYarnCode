@@ -1,0 +1,46 @@
+.button-parent{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:33px;
+width:120px;
+height:30px;
+border:2px solid black;
+}
+
+.child-one{
+width:50%;
+height:100%;
+background-color:blue;
+padding:2px 3px;
+margin:0px;
+color:whitesmoke;
+cursor:pointer;
+}
+
+/* .hr-1{
+height:100%;
+width:1%;
+
+}
+
+.hr-2{
+    height:100%;
+    width:1%;
+    }
+     */
+.child-two{
+    padding:2px;
+    width:50%;
+    }
+
+.child-three{
+        width:25%;
+        background-color:blue;
+        height:100%;
+        margin:0px;
+        padding:2px 4px;
+        cursor:pointer;
+        color:whitesmoke;
+
+        }

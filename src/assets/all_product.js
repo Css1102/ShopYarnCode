@@ -329,10 +329,11 @@ let all_product = [
 for(let obj in all_product){
 all_product[obj].count=1;
 if(all_product[obj].id%2===1){
-  all_product[obj].new_price=(all_product[obj].new_price+all_product[obj].old_price)/2-5;
+  all_product[obj].new_price=(all_product[obj].new_price+all_product[obj].old_price+15)/2-all_product[obj].new_price%10+all_product[obj].id%10;
+  
 }
 else{
-  all_product[obj].new_price=(all_product[obj].new_price+all_product[obj].old_price)/2-10;
+  all_product[obj].new_price=(all_product[obj].new_price+all_product[obj].old_price-15)/2+all_product[obj].new_price%10-all_product[obj].id%10;
 }
 }
 export default all_product;

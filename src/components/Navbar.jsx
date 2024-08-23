@@ -9,6 +9,11 @@ import { Link } from 'react-router-dom'
 function Navbar() {
   const[pointer,setPointer]=React.useState('shop')
   const logged=useSelector((state)=>state.dukan.islogged)
+  const first=useSelector((state)=>state.dukan.initchar)
+  // const{logged,first}=useSelector((state)=>({
+  //   logged:state.dukan.islogged,
+  //   first:state.dukan.initchar,
+  // }))
 // const {countCart}=useContext(ShopContext)
 return(
 <div className="navbar">
@@ -25,7 +30,7 @@ return(
 <div className="nav-cart-icon">
 {console.log(logged)}
  {!logged ? <Link style={{textDecoration:'none'}} to='/login'><button>Login</button></Link>:
- <Link style={{textDecoration:'none'}} to='/'><button className="button-log">V</button></Link>}
+ <Link style={{textDecoration:'none'}} to='/'><button className="button-log">{first.toUpperCase()}</button></Link>}
 <Link style={{textDecoration:'none'}} to='/cart'><img src={cart_icon} alt="nhi mila bhai" /></Link>
 {/* <div className="nav-bar-count">{countCart()}</div> */}
 </div>

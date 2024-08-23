@@ -17,15 +17,12 @@ const handleLogin=(e)=>{
 e.preventDefault()
 let verify=JSON.parse(localStorage.getItem("input"))
 if(verify.email===LogInput.email && verify.password===LogInput.password){
-dispatch(toggleLogged())
+dispatch(toggleLogged(LogInput.email.charAt(0)))
 navigate("/shop")
 }
-// return <p><img src={cart_cross_icon} className="cross-style" alt="jaoge tum kabhi" />The password
-// or email you entered are incorrect. Please try again</p>
-// document.write(<p><img src={cart_cross_icon} className="cross-style" alt="jaoge tum kabhi" />The password
-//  or email you entered are incorrect. Please try again</p>)
-// }
-
+else{
+alert("signup first before logging in")
+}
 }
   return (
     <div className="loginpage">

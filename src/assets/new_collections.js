@@ -69,10 +69,10 @@ let new_collections = [
 for(let arg of new_collections){
 arg.count=1;
 if(arg.id%2===1){
-  arg.new_price=(arg.new_price+arg.old_price)/2-5;
+  arg.new_price=(arg.new_price+arg.old_price+15)/2-arg.new_price%10+arg.id%10;
 }
 else{
-  arg.new_price=(arg.new_price+arg.old_price)/2-10;
+  arg.new_price=(arg.new_price+arg.old_price-15)/2+arg.old_price%10-arg.id%10;
 }
 
 

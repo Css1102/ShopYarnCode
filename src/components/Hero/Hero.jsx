@@ -5,17 +5,17 @@ import hand_icon from '../../assets/hand_icon.png'
 import arrow_icon from '../../assets/arrow.png'
 import hero_image from '../../assets/hero_image.png'
 const Hero = () => {
-  function moveLatest(){
-  window.scrollY(1200)
- }
+  const moveLatest=()=>{
+    console.log("clicked!")
+    setTimeout(()=>{  window.scrollTo(0,1200)
+    },2000)
+  }
   return (
     <div className="hero">
     <div className="hero-left">
     <h2>NEW ARRIVALS ONLY</h2>
-     <div>
     <div className='hero-hand-icon'>
     <p>EXCLUSIVE COLLECTIONS FOR EVERYONE</p>
-    </div>
      </div>
      <div className="hero-latest-btn">
    <div>

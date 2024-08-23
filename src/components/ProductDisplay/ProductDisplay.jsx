@@ -4,14 +4,15 @@ import './ProductDisplay.css'
 import star_icon from '../../assets/star_icon.png'
 import star_dull_icon from '../../assets/star_dull_icon.png'
 import cart_cross_icon from '../../assets/cart_cross_icon.png'
-import {useDispatch} from 'react-redux'
-import {addToCart} from '../../Slice/shopSlice'
+import {useDispatch,useSelector} from 'react-redux'
+import {addToCart,} from '../../Slice/shopSlice'
 function ProductDisplay(props) {
 const {product}=props;
+const allow=useSelector((state)=>state.dukan.islogged)
 // console.log(product)
 const dispatch=useDispatch()
 const addCartHandler=()=>{
-dispatch(addToCart(product.id))
+allow ?dispatch(addToCart(product.id)): alert("please login first")
 }
  return (
 <div className="productdisplay">
