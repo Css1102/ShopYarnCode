@@ -35,10 +35,10 @@ let data_product=[
 for(let item of data_product){
 item.count=1;
 if(item.id%2===1){
-  item.new_price=(item.new_price+item.old_price+15)/2-item.old_price%10;
+  item.new_price=(item.new_price+item.old_price+15)/2-item.old_price%10+item.id%10;
 }
 else{
-  item.new_price=(item.new_price+item.old_price-15)/2+item.new_price%10;
+  item.new_price=(item.new_price+item.old_price-15)/2+item.new_price%10-item.id%10;
 }
 
 }

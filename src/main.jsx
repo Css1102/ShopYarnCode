@@ -27,7 +27,7 @@ const routeArr=createBrowserRouter(
   <Route path="/login" element={<LoginPage/>}/>
   <Route path="/signup" element={<Signup/>}/>
   <Route path="/cart" element={<Cart/>}/>
-  </Route>
+   </Route>
   )
 )
 

@@ -13,13 +13,23 @@ const ShopCategory = (props) => {
 //   {a.map((item,i)=>{return <option key={i}>{...item.options}</option>})}
 
 // }
+let expr=undefined;
+if(props.category==="men"){
+  expr="1-12"
+}
+else if(props.category==="women"){
+  expr="12-24"
+
+}
+else{
+  expr="24-36"
+}
   return (
   <div className="shop-category">
   <img className='shop-img' src={props.banner} alt="" />
    <div className="shopcategory-indexsort">
-    <p>
-    <span>Showing 1-12 </span> Out of 36 Products.
-    </p>
+   <p>
+   <span>Showing {`${expr}`} </span> Out of 36 Products.</p>
     <br/>
     <div className="shopcategory-sort">
    

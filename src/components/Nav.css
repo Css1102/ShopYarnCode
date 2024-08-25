@@ -32,6 +32,7 @@ gap:50px;
 color:#626262;
 font-size:20px;
 font-weight:500;
+margin-right:20px;
 }
 
 .nav-menu li{
@@ -100,8 +101,15 @@ color:azure;
 }
 
 .text-custom{
-height:10px;
-width:50px;
+display:flex;
+justify-content:center;
+align-items:center;
+height:20px!important;
+width:20px !important;
+padding:18px !important;
 cursor:pointer;
-border-radius:30px;
+border-radius:25px !important;
+margin-bottom:6px !important;
+position:relative !important;
+right:30px !important;
 }

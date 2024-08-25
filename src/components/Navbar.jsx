@@ -30,7 +30,7 @@ return(
 <div className="nav-cart-icon">
 {console.log(logged)}
  {!logged ? <Link style={{textDecoration:'none'}} to='/login'><button>Login</button></Link>:
- <Link style={{textDecoration:'none'}} to='/'><button className="button-log">{first.toUpperCase()}</button></Link>}
+ <Link  style={{textDecoration:'none' }} to='/'><button className="text-custom">{first.toUpperCase()}</button></Link>}
 <Link style={{textDecoration:'none'}} to='/cart'><img src={cart_icon} alt="nhi mila bhai" /></Link>
 {/* <div className="nav-bar-count">{countCart()}</div> */}
 </div>
