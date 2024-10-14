@@ -10,6 +10,13 @@ width:100%;
 margin-bottom:25px;
 }
 
+@media(max-width:260px){
+.hero{
+display:flex;
+flex-wrap:column;
+}
+}
+
 .hero-left{
 flex:1;
 display:flex;
@@ -71,7 +78,7 @@ flex:1;
 display:flex;
 justify-content:center;
 align-items:center;
-margin-top:50px;
+margin-top:0px;
 }
 
 .hero-right img{
@@ -82,3 +89,4 @@ margin-left:10px;
 position:relative;
 left:50px;
 }
+

@@ -4,12 +4,14 @@ height:100%;
 background:#fce3fe;
 padding-top:100px;
 margin-bottom:50px;
+padding:10px 0px;
 }
 
 .loginsignup-container{
 width:580px;
 height:600px;
 background:white;
+border:1px solid black;
 margin:auto;
 padding:40px 60px;
 }

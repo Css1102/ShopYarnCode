@@ -19,11 +19,60 @@ margin-left:400px;
 margin-top:80px;
 position:relative;
 right: 400px;
-padding:10px 20px;
+padding:4px 8px;
 border-radius:40px;
 border:1px solid #888;
+display:flex;
+gap:10px;
+width:100px;
+height:30px;
+justify-content:space-between;
+align-items:center;
 }
 
+.sort-msg{
+margin-right:2px;
+font-size:12px;
+margin-top:20px;
+display:inline-block;
+white-space: nowrap;
+/* line-height:1.1; */
+}
+
+.sort-btn{
+    height:20px ;
+    width:40px ;
+    }
+
+.filter-img{
+height:10px;
+width:20px;
+border-radius:5px;
+cursor:pointer;
+padding:0px;
+margin-bottom:1080px;
+}
+
+
+
+.list-class{
+margin-top:30px;
+list-style:none;
+height:100px;
+width:100px;
+display:flex;
+flex-direction:column;
+background-color:#FFFFFF;
+justify-content:space-around;
+align-items:center;
+color:black;
+border:1px solid black;
+}
+
+.list-item{
+padding-left:3px;
+padding-right:3px;
+}
 .shopcategory-indexsort p{
 margin-bottom:25px;
 }
@@ -63,27 +112,3 @@ font-size:18px;
 font-weight:300;
 }
 
-.list-option{
-margin:20px;
-cursor:pointer;
-width:50%;
-position:relative;
-left:100px;
-}
-
-/* .list-option:hover{
-background-color:blue;
-} */
-.list-styl{
-/* display:grid;
-grid-template-columns: repeat(1,20px);
-grid-template-rows: repeat(2,10px);
-gap:10px; */
-list-style-type:none;
-text-decoration:none;
-}
-
-/* list-option-item{
-list-style:none;
-text-decoration:none;
-} */

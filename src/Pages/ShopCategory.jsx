@@ -7,32 +7,43 @@ import './ShopCategory.css'
 import all_product from '../assets/all_product'
 
 const ShopCategory = (props) => {
-//  const renderOptions=(a)=>{
-//   if(a!==null){
-//   <select className="list-option">
-//   {a.map((item,i)=>{return <option key={i}>{...item.options}</option>})}
-
-// }
-let expr=undefined;
-if(props.category==="men"){
-  expr="1-12"
+const filterMenu=["price","color","date"]
+const[toggle,setToggle]=useState(false)
+const handleToggle=()=>{
+console.log("toggle clicked");
+setToggle((prev)=>!prev)
 }
-else if(props.category==="women"){
-  expr="12-24"
-
-}
-else{
-  expr="24-36"
-}
+// let expr=undefined;
+// useEffect(()=>{
+//   if(props.category==="men"){
+//     expr="1-12"
+//   }
+//   else if(props.category==="women"){
+//     expr="12-24"
+  
+//   }
+//   else{
+//     expr="24-36"
+//   }
+  
+// },[])
   return (
   <div className="shop-category">
   <img className='shop-img' src={props.banner} alt="" />
    <div className="shopcategory-indexsort">
    <p>
-   <span>Showing {`${expr}`} </span> Out of 36 Products.</p>
+   <span>Showing 1-12 </span> Out of 36 Products.</p>
     <br/>
     <div className="shopcategory-sort">
-   
+   <p className="sort-msg">Sort by</p>
+   <button className='sort-btn' onClick={()=>handleToggle}><img className='filter-img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNGk8qlROXITq5otWgtvhvgm5Y3mfHCo2kaQ&usqp=CAU" alt="" /></button>
+   {toggle && (<ul className="list-class">
+    {/* console.log("item rendered") */}
+    {filterMenu.map((item,index)=>(
+    <li key={index} className='list-item'>{item}</li>
+    ))
+    }
+    </ul>)}
     </div>
    </div>
    <div className="shopcategory-products">

@@ -13,7 +13,7 @@ function App() {
   return (
   <Provider store={store}>
     <Navbar/>
-    <main>
+    <main className='main-class'>
       <Outlet/>
     </main>
     <Footer/>

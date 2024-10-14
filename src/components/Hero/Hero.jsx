@@ -13,6 +13,7 @@ const Hero = () => {
   return (
     <div className="hero">
     <div className="hero-left">
+    {/* <h2 className="new">NEW</h2> */}
     <h2>NEW ARRIVALS ONLY</h2>
     <div className='hero-hand-icon'>
     <p>EXCLUSIVE COLLECTIONS FOR EVERYONE</p>
