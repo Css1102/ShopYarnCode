@@ -1,17 +1,25 @@
 import React from 'react'
-import {useState,useEffect,useContext} from 'react'
+import {useState,useEffect,useContext,useRef} from 'react'
 import dropdown_icon from '../assets/dropdown_icon.png'
-//   </select>
+import search_icon from '../assets/search.png'
+
  import Item from '../components/Item/Item'
 import './ShopCategory.css'
 import all_product from '../assets/all_product'
 
 const ShopCategory = (props) => {
-const filterMenu=["price","color","date"]
+const butRef=useRef(null)
+const filterMenu=["price","color","Recent"]
 const[toggle,setToggle]=useState(false)
-const handleToggle=()=>{
+const handleToggle=(e)=>{
+// e.stopPropagation()
 console.log("toggle clicked");
 setToggle((prev)=>!prev)
+}
+
+const handleSearch=()=>{
+  console.log(e.target)
+e.target.nextElementSibling.readOnly=false;
 }
 // let expr=undefined;
 // useEffect(()=>{
@@ -31,19 +39,29 @@ setToggle((prev)=>!prev)
   <div className="shop-category">
   <img className='shop-img' src={props.banner} alt="" />
    <div className="shopcategory-indexsort">
-   <p>
+   <p className='text-class'>
    <span>Showing 1-12 </span> Out of 36 Products.</p>
     <br/>
     <div className="shopcategory-sort">
+    <div className="btn-menu">
+   <button className='sort-btn' ref={butRef}>
    <p className="sort-msg">Sort by</p>
-   <button className='sort-btn' onClick={()=>handleToggle}><img className='filter-img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNGk8qlROXITq5otWgtvhvgm5Y3mfHCo2kaQ&usqp=CAU" alt="" /></button>
-   {toggle && (<ul className="list-class">
-    {/* console.log("item rendered") */}
+   <img className='filter-img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNGk8qlROXITq5otWgtvhvgm5Y3mfHCo2kaQ&usqp=CAU"  alt="" aria-expanded='false' data-expandable='true'/>
+    </button>
+    {toggle && (<div className="list-div">
+    <ul className="list-class">
     {filterMenu.map((item,index)=>(
     <li key={index} className='list-item'>{item}</li>
     ))
     }
-    </ul>)}
+    </ul>
+    </div>
+    )}
+    </div>
+    <div className="search-bar">
+    <img src={search_icon} alt="" className="search-icon" />
+    <input type="text" placeholder='Search' className='text-bar'/>
+    </div>
     </div>
    </div>
    <div className="shopcategory-products">

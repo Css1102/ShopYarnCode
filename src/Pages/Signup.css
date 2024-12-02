@@ -3,7 +3,7 @@ width:100%;
 height:100%;
 background:#fce3fe;
 padding-top:100px;
-margin-bottom:50px;
+margin-bottom:70px;
 padding:10px 0px;
 }
 
@@ -13,18 +13,19 @@ height:600px;
 background:white;
 border:1px solid black;
 margin:auto;
-padding:40px 60px;
+padding:30px 60px;
 }
 
 .loginsignup-container h1{
-margin:20px 0px
+margin-top:4px;
+margin-bottom:10px;
 }
 
 .loginsignup-fields{
 display:flex;
 flex-direction:column;
-gap:29px;
-margin-top:30px;
+gap:12.5px;
+margin-top:20px;
 }
 
 .loginsignup-fields input{
@@ -39,16 +40,16 @@ font-size:18px;
 
 .loginsignup-container button{
 width:580px;
-height:72px;
+height:62px;
 color:white;
 background:#ff4141;
-margin-top:30px;
+margin-top:0px;
 border:none;
 font-size:24px;
 font-weight:500;
 cursor:pointer;
 position:relative;
-right:20px;
+right:60px;
 }
 
 .loginsignup-login{
@@ -74,3 +75,14 @@ font-size:18px;
 font-weight:500;
 }
 
+.submit-action{
+background-color:rgb(35, 179, 40);
+color:black;
+}
+
+.error{
+font-size:14px;
+font-weight:400;
+color:red;
+margin-top:0px;
+}

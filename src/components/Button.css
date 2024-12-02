@@ -1,21 +1,25 @@
 .button-parent{
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
-gap:33px;
+gap:0px;
 width:120px;
 height:30px;
-border:2px solid black;
+border:1px solid black;
 }
 
 .child-one{
-width:50%;
+width:30px;
 height:100%;
 background-color:blue;
-padding:2px 3px;
+padding:5px 10px 5px 10px;
 margin:0px;
 color:whitesmoke;
 cursor:pointer;
+border:1px solid blue;
+display:flex;
+justify-content: center;
+align-items: center;
 }
 
 /* .hr-1{

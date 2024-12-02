@@ -7,15 +7,17 @@
     }
     
     .loginpage-container{
-    width:580px;
+    width:600px;
     height:600px;
     background:white;
     margin:auto;
-    padding:40px 60px;
+    padding:40px 40px;
     }
     
     .loginpage-container h1{
-    margin:20px 0px
+        margin:10px 0px;
+        position:relative;
+        bottom:40px;
     }
     
     .loginpage-fields{
@@ -76,4 +78,18 @@
     background-color:red;
     margin-right:15px;
     object-fit:cover;
+    }
+
+    .error{
+    color:red;
+    font-size:16px;
+    font-weight:400;
+    margin-top:0px;
+    }
+
+    .submit-err{
+        color:red;
+        font-size:16px;
+        font-weight:400;
+        margin-top:0px;
     }

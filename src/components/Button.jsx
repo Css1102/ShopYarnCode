@@ -8,7 +8,8 @@ const dispatch=useDispatch()
 return(
 <div>
 <div className="button-parent">
-<div className="child-one" onClick={()=>dispatch(removeToCart(curobj.id))}>-
+<div className="child-one" onClick={()=>dispatch(removeToCart(curobj.id))}>
+<p className="nested-one">-</p>
 </div>
 <div className="child-two">{curobj.count}
 </div>
