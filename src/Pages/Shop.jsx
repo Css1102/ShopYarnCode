@@ -9,10 +9,10 @@ const Shop = () => {
   const newRef=useRef(null)
   return (
 <div>
-<Hero refProp={newRef}/>
+<Hero />
 <Popular/>
 <Offers/>
-<NewCollections ref={newRef}/>
+<NewCollections />
 <NewsLetter/>
 </div>
   )

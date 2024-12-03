@@ -11,16 +11,25 @@ const ShopCategory = (props) => {
 const butRef=useRef(null)
 const filterMenu=["price","color","Recent"]
 const[toggle,setToggle]=useState(false)
+const[allproduct,setAllproduct]=useState(all_product)
 const handleToggle=(e)=>{
 // e.stopPropagation()
 console.log("toggle clicked");
 setToggle((prev)=>!prev)
 }
-
-const handleSearch=()=>{
-  console.log(e.target)
-e.target.nextElementSibling.readOnly=false;
+const handleSort=(e)=>{
+console.log(e.target.innerText)
+// const {sortBy}=e.target.value;
+if(e.target.innerText==='price'){
+//   const newProduct=[...allproduct]
+// newProduct.sort((a,b)=>{return (a.new_price)-(b.new_price)>0})
+// setAllproduct(newProduct)
 }
+}
+// const handleSearch=()=>{
+//   console.log(e.target)
+// e.target.nextElementSibling.readOnly=false;
+// }
 // let expr=undefined;
 // useEffect(()=>{
 //   if(props.category==="men"){
@@ -44,14 +53,14 @@ e.target.nextElementSibling.readOnly=false;
     <br/>
     <div className="shopcategory-sort">
     <div className="btn-menu">
-   <button className='sort-btn' ref={butRef}>
+   <button className='sort-btn' onClick={handleToggle}>
    <p className="sort-msg">Sort by</p>
    <img className='filter-img' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNGk8qlROXITq5otWgtvhvgm5Y3mfHCo2kaQ&usqp=CAU"  alt="" aria-expanded='false' data-expandable='true'/>
     </button>
     {toggle && (<div className="list-div">
     <ul className="list-class">
     {filterMenu.map((item,index)=>(
-    <li key={index} className='list-item'>{item}</li>
+    <li key={index} value={item} onClick={handleSort} className='list-item'>{item}</li>
     ))
     }
     </ul>
@@ -65,7 +74,7 @@ e.target.nextElementSibling.readOnly=false;
     </div>
    </div>
    <div className="shopcategory-products">
-    {all_product.map((item,i)=>{
+    {allproduct.map((item,i)=>{
     if(props.category===item.category){
     return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
     }

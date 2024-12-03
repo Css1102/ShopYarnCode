@@ -5,6 +5,13 @@ import hand_icon from '../../assets/hand_icon.png'
 import arrow_icon from '../../assets/arrow.png'
 import hero_image from '../../assets/hero_image.png'
 const Hero = () => {
+  const handleMove=(e)=>{
+  console.log(e.target)
+  window.scrollTo({
+  top:1600,
+  behavior:'smooth'
+  })
+  }
   return (
     <div className="hero">
     <div className="hero-left">
@@ -13,12 +20,9 @@ const Hero = () => {
     <div className='hero-hand-icon'>
     <p>EXCLUSIVE COLLECTIONS FOR EVERYONE</p>
      </div>
-     <div className="hero-latest-btn">
-   <div>
-   <button>Latest Collection</button>
-   </div>
-    <img src={arrow_icon} height='100px' width='100px' alt="" />
-     </div>
+     
+   <button className="hero-latest-btn" onClick={handleMove}>Latest Collection</button>
+    {/* <img src={arrow_icon} height='100px' width='100px' alt="" /> */}
     </div>
     <div className="hero-right">
     <img src={hero_image} height='100px' width='20px' alt="" />
