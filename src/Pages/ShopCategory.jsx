@@ -2,51 +2,55 @@ import React from 'react'
 import {useState,useEffect,useContext,useRef} from 'react'
 import dropdown_icon from '../assets/dropdown_icon.png'
 import search_icon from '../assets/search.png'
-
- import Item from '../components/Item/Item'
+import Item from '../components/Item/Item'
 import './ShopCategory.css'
-import all_product from '../assets/all_product'
 
 const ShopCategory = (props) => {
 const butRef=useRef(null)
-const filterMenu=["price","color","Recent"]
+const filterMenu=["price","discount","Recent"]
+// useEffect(()=>{
+//   if(props.category==="men"){
+//     gender_product=[...all_product.slice(13,25)]
+//     setAllproduct(gender_product)
+//   }
+//   else if(props.category==="women"){
+//     gender_product=[...all_product.slice(0,13)]
+//    setAllproduct(gender_product)
+//   }
+//   else{
+//     gender_product=[...all_product.slice(25,36)
+//     ]
+//     setAllproduct(gender_product)
+//  } 
+// },[])
+
 const[toggle,setToggle]=useState(false)
-const[allproduct,setAllproduct]=useState(all_product)
+const[allproduct,setAllproduct]=useState(props.gender_product)
+useEffect(()=>{
+setAllproduct(props.gender_product)
+},[props.category])
 const handleToggle=(e)=>{
-// e.stopPropagation()
-console.log("toggle clicked");
+window.scrollTo(500,500)
 setToggle((prev)=>!prev)
 }
 const handleSort=(e)=>{
-console.log(e.target.innerText)
-// const {sortBy}=e.target.value;
 if(e.target.innerText==='price'){
-//   const newProduct=[...allproduct]
-// newProduct.sort((a,b)=>{return (a.new_price)-(b.new_price)>0})
-// setAllproduct(newProduct)
+  const newProduct=[...allproduct]
+  console.log(allproduct)
+  // console.log(newProduct)
+ newProduct.sort((a,b)=>{return (a.new_price)-(b.new_price)})
+ setAllproduct(newProduct)
+}
+else if(e.target.innerText==='discount'){
+const discountArr=[...allproduct]
+discountArr.sort((a,b)=>(b.old_price-b.new_price)-(a.old_price-a.new_price))
+setAllproduct(discountArr)
 }
 }
-// const handleSearch=()=>{
-//   console.log(e.target)
-// e.target.nextElementSibling.readOnly=false;
-// }
-// let expr=undefined;
-// useEffect(()=>{
-//   if(props.category==="men"){
-//     expr="1-12"
-//   }
-//   else if(props.category==="women"){
-//     expr="12-24"
-  
-//   }
-//   else{
-//     expr="24-36"
-//   }
-  
-// },[])
   return (
   <div className="shop-category">
   <img className='shop-img' src={props.banner} alt="" />
+  
    <div className="shopcategory-indexsort">
    <p className='text-class'>
    <span>Showing 1-12 </span> Out of 36 Products.</p>
@@ -65,7 +69,8 @@ if(e.target.innerText==='price'){
     }
     </ul>
     </div>
-    )}
+    )}  
+
     </div>
     <div className="search-bar">
     <img src={search_icon} alt="" className="search-icon" />

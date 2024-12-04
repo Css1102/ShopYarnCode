@@ -17,5 +17,5 @@ ${props.old_price}
  </div>
   )
 }
-
+// {onClick={window.scrollTo(0,0)}
 export default Item
